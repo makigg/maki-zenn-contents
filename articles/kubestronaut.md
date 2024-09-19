@@ -8,7 +8,7 @@ published: false
 
 ## はじめに
 
-Kubestronautに認定されました。今回、Kubestronautに必要なKubernetesの認定資格5つを一気に取得したので、勉強方法や模擬試験と本番の得点比較などを書いていきます。これからKubernetes周りの資格勉強する方の参考になれば幸いです。
+Kubestronautに認定されました。必要なKubernetesの認定資格5つを一気に取得したので、各資格の勉強方法や模擬試験と本番の得点比較などを書いていきます。これからKubernetes周りの資格勉強する方の参考になれば幸いです。
 
 https://www.credly.com/badges/ab1bb86e-a7af-4cc9-a801-7ce68c091e85/public_url
 
@@ -22,16 +22,16 @@ https://training.linuxfoundation.org/ja/resources/kubestronaut-program/
 
 各認定試験の概要です。
 
-- **Certified Kubernetes Administrator (CKA)**:
-  ハンズオン形式。Kubernetesの基本とクラスタ管理について問われる。
+- **CertifiedKubernetes Administrator (CKA)**:
+  ハンズオン形式。Kubernetesの基本とクラスタ管理について問われます。
 - **Certified Kubernetes Application Developer (CKAD)**:
-  ハンズオン形式。Kubernetes上でのアプリケーション開発について問われる。
+  ハンズオン形式。Kubernetes上でのアプリケーション開発について問われます。
 - **Certified Kubernetes Security Specialist (CKS)**:
-  ハンズオン形式。Kubernetes周りのセキュリティについて問われる。CKAの上位資格にあたり、CKAに合格しないと受けることができない。
+  ハンズオン形式。Kubernetes周りのセキュリティについて問われます。CKAの上位資格にあたり、CKAに合格しないと受けることができません。
 - **Kubernetes and Cloud Native Security Associate (KCSA)**:
-  選択式。Kubernetesのセキュリティについて問われる。2024/9時点では英語しかない。
+  選択式。Kubernetesのセキュリティについて問われます。2024/9時点では英語しかありません。
 - **Kubernetes and Cloud Native Associate (KCNA)**:
-  選択式。Kubernetesの基本について問われる。
+  選択式。Kubernetesの基本について問われます。
 
 ハンズオン形式の試験では、実際にKubernetesのクラスタを触りながら、Kubernetesリソースの作成やトラブルシュートを行います。また、試験中、公式ドキュメントを参照することができます。
 
@@ -76,7 +76,7 @@ Killer Shellは満点が100点ではないので、得点率に計算し直し�
 
 将来的に変わることもあるかもしれませんが、必要得点は私が受けたときのものを記載しています。
 
-## 各認定試験に向けて勉強したことと感想
+## 各認定試験の概要と勉強したこと
 
 ### Certified Kubernetes Administrator (CKA)
 
@@ -197,7 +197,7 @@ Kubernetesを中心とするクラウドネイティブエコシステム全体�
   ```
 - Namespace切り替え
   ```sh
-  alias kn=kubectl config set-context --current --namespace
+  alias kn='kubectl config set-context --current --namespace'
   ```
   以下のように操作対象のNamespaceを`kube-system`に変更できるようになります。
   ```sh
@@ -205,7 +205,7 @@ Kubernetesを中心とするクラウドネイティブエコシステム全体�
   ```
 - YAML生成
   ```sh
-  export dry="--dry-run=client -o yaml"
+  export dry='--dry-run=client -o yaml'
   ```
   以下のようなコマンドでYAMLファイルのテンプレートを出力できるようになります。
   ```sh
@@ -217,23 +217,23 @@ Kubernetesを中心とするクラウドネイティブエコシステム全体�
 ```sh
 alias k=kubectl                            # 設定済みのはず
 complete -o default -F __start_kubectl k   # 設定済みのはず
-alias kn=kubectl config set-context --current --namespace
-export dry="--dry-run=client -o yaml"
+alias kn='kubectl config set-context --current --namespace'
+export dry='--dry-run=client -o yaml'
 ```
 
 CKADは各コントロールプレーンにログインしてから問題を解かないと行けないので、メモ帳アプリに以下をメモして、流し込むようにしていました。
 
 ```sh
 cat <<EOF >> ~/.bashrc
-alias kn=kubectl config set-context --current --namespace
-export dry="--dry-run=client -o yaml"
+alias kn='kubectl config set-context --current --namespace'
+export dry='--dry-run=client -o yaml'
 EOF
 ```
 
 ### 使えたほうが良いツール
 
 - **vimやemacs**: マニフェストの編集をするので必要です。
-- **tmux**: 複数ターミナルを立ち上げてもいいのですが、ターミナル分割ツールがあると便利です。私は普段から業務で使ってます。
+- **tmux**: 複数ターミナルを立ち上げてもいいのですが、ターミナル分割ツールがあると便利です。
 
 CKAD環境の各コントロールプレーンにはtmuxが入ってなかったので、問題を解く前にインストールしていました。
 
