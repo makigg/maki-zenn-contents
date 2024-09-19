@@ -1,9 +1,9 @@
 ---
 title: "Kubestronautに認定されたので勉強方法など書いてく"
 emoji: "📘"
-type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["kubernetes"]
-published: false
+type: "idea" # tech: 技術記事 / idea: アイデア
+topics: ["kubernetes", "kubestronaut", "cks", "cka", "cncf"]
+published: true
 ---
 
 ## はじめに
