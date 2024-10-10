@@ -63,9 +63,9 @@ CKA, CKAD, CKSは認定試験を購入したらついてくる[Killer Shell](htt
 
 | 認定 | 模擬試験             | 模試得点 | 必要得点 | 本番得点 |
 | ---- | -------------------- | -------- | -------- | -------- |
-| CKA  | Killer Shell         | 63       | 66       | 100      |
-| CKAD | Killer Shell         | 62       | 66       | 93       |
-| CKS  | Killer Shell         | 38       | 67       | 73       |
+| CKA  | Killer Shell (1回目) | 63       | 66       | 100      |
+| CKAD | Killer Shell (1回目) | 62       | 66       | 93       |
+| CKS  | Killer Shell (1回目) | 38       | 67       | 73       |
 | KCSA | Udemy で購入した模試 | 83       | 75       | 90       |
 | KCNA | NaN                  | NaN      | 75       | 93       |
 
