@@ -13,7 +13,7 @@ Kubernetesはどこのご家庭にも1クラスタはあると思いますが、
 
 - Cluster APIインストール編 ←ココ
 - ClusterClass設定編
-- Volume設定編
+- ストレージ設定編
 
 目指すべき全体像はこんな感じ。Management ClusterにCluster APIからKubernetesのクラスタが自動で払いだされていきます。
 
@@ -154,9 +154,9 @@ make deps-proxmox
 
 私は以下の内容を書き換えました。
 
-- LVM-Thinプールを使う場合、ディスクフォーマットを`qcow2`から`raw`に変更します。
-- [Proxmox CSI Plugin](https://github.com/sergelogvinov/proxmox-csi-plugin)を使う場合、SCSI Controllerに`virtio-scsi-single`を設定する。
-- IPv6を使わない場合、`boot_command_prefix`に`ipv6.disable=1`を追加する。
+- LVM-Thinプールを使う場合、ディスクフォーマットを`qcow2`から`raw`に変更。
+- SCSI Controllerに`virtio-scsi-single`を設定。詳しくはストレージ設定編で説明するのですが、コンテナ用の永続ボリュームにProxmoxストレージを使いたい場合、SCSIコントローラーにVirtIO SCSI singleもしくは、VirtIO SCSI を設定する必要があります。
+- IPv6を使わない場合、`boot_command_prefix`に`ipv6.disable=1`を追加。
 
 ```diff
 diff --git a/images/capi/packer/proxmox/packer.json.tmpl b/images/capi/packer/proxmox/packer.json.tmpl
@@ -303,7 +303,7 @@ export PROXMOX_SECRET="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 
 # ClusterClass設定編で使う
 export CLUSTER_TOPOLOGY=true
-# Volume設定編で使う
+# ストレージ設定編で使う
 export EXP_CLUSTER_RESOURCE_SET=true
 ```
 
@@ -695,7 +695,7 @@ clusterリソースを削除すると、他もすべて削除されます。
 kubectl delete cluster cluster01
 ```
 
-### まとめ
+## まとめ
 
 自宅のPCに構築したProxmox上にCluster APIをインストールして、Kubernetesクラスタを払いだしてみました。
 
