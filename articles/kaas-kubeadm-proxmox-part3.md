@@ -10,8 +10,8 @@ published: false
 
 全3回のシリーズで、自宅にKaaS(Kubernetes as a Service)を構築する方法を解説しています。
 
-- Cluster APIインストール編
-- ClusterClass設定編
+- [Cluster APIインストール編](https://zenn.dev/articles/kaas-kubeadm-proxmox-part1)
+- [ClusterClass設定編](https://zenn.dev/articles/kaas-kubeadm-proxmox-part2)
 - ストレージ設定編 ←ココ
 
 目指すべき全体像はこんな感じ。Management ClusterにCluster APIからKubernetesのクラスタが自動でデプロイされていきます。
@@ -85,7 +85,7 @@ https://cluster-api.sigs.k8s.io/tasks/experimental-features/cluster-resource-set
 
 
 
-ゴールデンイメージのSCSI ControllerがVirtIO SCSI single、もしくはVirtIO SCSIに設定されているか確認します。Cluster APIインストール編の手順通りにゴールデンイメージを作った方は既に設定されているはずです。
+ゴールデンイメージのSCSI ControllerがVirtIO SCSI single、もしくはVirtIO SCSIに設定されているか確認します。[Cluster APIインストール編の手順](https://zenn.dev/articles/kaas-kubeadm-proxmox-part1#packerでゴールデンイメージを作る)通りにゴールデンイメージを作った方は既に設定されているはずです。
 
 ![](/images/kaas-kubeadm-proxmox/proxmox-scsi-controller.drawio.png)
 
@@ -136,6 +136,10 @@ make build-proxmox-ubuntu-2404
 ```
 
 新しくVM IDが発行されるので、それをProxmoxMachineTemplateに反映させてください。
+
+### ClusterResourceSetを有効化する
+
+TODO: feature-gateの開け方を説明
 
 ### Proxmox CSI Plugin用トークンを発行する
 
