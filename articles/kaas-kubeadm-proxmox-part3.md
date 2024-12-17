@@ -8,11 +8,11 @@ published: false
 
 ## はじめに
 
-全3回のシリーズで、自宅にKaaS(Kubernetes as a Service)を構築する方法を解説しています。
+この記事は全3回で、自宅にKaaS(Kubernetes as a Service)を構築する方法を解説するシリーズの3つめです。
 
 - [Cluster APIインストール編](https://zenn.dev/articles/kaas-kubeadm-proxmox-part1)
 - [ClusterClass設定編](https://zenn.dev/articles/kaas-kubeadm-proxmox-part2)
-- ストレージ設定編 ←ココ
+- **ストレージ設定編** ←ココ
 
 目指すべき全体像はこんな感じ。Management ClusterにCluster APIからKubernetesのクラスタが自動でデプロイされていきます。
 
@@ -139,7 +139,14 @@ make build-proxmox-ubuntu-2404
 
 ### ClusterResourceSetを有効化する
 
-TODO: feature-gateの開け方を説明
+ClusterResourceSetを有効にします。[Cluster APIインストール編](https://zenn.dev/articles/kaas-kubeadm-proxmox-part1#management-clusterの構築)に書かれた手順通りCluster APIをインストールした場合、既に設定されています。
+
+Namespace capi-systemのDeployment capi-controller-managerの`args`に指定してある`--feature-gates`という名前の引数の設定項目を修正することで、ClusterResourceSet機能を有効にします。
+
+```diff
+-        - --feature-gates=MachinePool=true,ClusterResourceSet=false,ClusterTopology=true,RuntimeSDK=false,MachineSetPreflightChecks=false
++        - --feature-gates=MachinePool=true,ClusterResourceSet=true,ClusterTopology=true,RuntimeSDK=false,MachineSetPreflightChecks=false
+```
 
 ### Proxmox CSI Plugin用トークンを発行する
 
@@ -908,9 +915,6 @@ Proxmoxの画面からもボリュームが作成されていることを確認�
 
 ## まとめ
 
-ClusterResourceSetを使ってKubernetesクラスでストレージを使えるようにしました。同じ要領でCNIの設定も行えるはずです。
+ClusterResourceSetを使ってKubernetesクラスでストレージを使えるようにしました。ClusterResourceSetは任意のマニフェストをCluster APIで作成したKubernetesクラスタに適用することができます。同じ要領でCNIの設定も行えます。
 
-やれなかったこと
-
-- ノードのラベル設定自動化
-- Metal LBのようなクラスタごとに設定値が異なるリソースの効率的な適用方法
+全3回で皆様のご自宅に

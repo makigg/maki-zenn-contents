@@ -8,10 +8,10 @@ published: false
 
 ## はじめに
 
-Kubernetesはどこのご家庭にも1クラスタはあると思いますが、1人1クラスタほしいなと考える人も多いのではないでしょうか？
+Kubernetesはどこのご家庭にも1クラスタはあると思いますが、家族で共有しているというケースが多く、1人1クラスタほしいなと考える方も多いのではないでしょうか？
 そんな声にお応えして、全3回のシリーズで、自宅にKaaS(Kubernetes as a Service)を構築する方法を解説します。
 
-- Cluster APIインストール編 ←ココ
+- **Cluster APIインストール編** ←ココ
 - [ClusterClass設定編](https://zenn.dev/articles/kaas-kubeadm-proxmox-part2)
 - [ストレージ設定編](https://zenn.dev/articles/kaas-kubeadm-proxmox-part3)
 
