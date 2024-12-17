@@ -3,7 +3,7 @@ title: "誤自宅KaaSその3 ストレージ設定編"
 emoji: "📘"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["kubernetes", "おうちkubernetes", "clusterapi", "proxmox", "kubeadm"]
-published: false
+published: true
 ---
 
 ## はじめに
@@ -917,4 +917,4 @@ Proxmoxの画面からもボリュームが作成されていることを確認�
 
 ClusterResourceSetを使ってKubernetesクラスでストレージを使えるようにしました。ClusterResourceSetは任意のマニフェストをCluster APIで作成したKubernetesクラスタに適用することができます。同じ要領でCNIの設定も行えます。
 
-全3回で皆様のご自宅に
+全3回のシリーズで皆様のご自宅にKaaSを構築する方法を解説しました。正直、どこに需要があるのかもわかりませんが、何かしらの参考になると嬉しいです。
