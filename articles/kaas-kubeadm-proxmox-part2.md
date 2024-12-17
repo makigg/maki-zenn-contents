@@ -10,9 +10,9 @@ published: false
 
 この記事は全3回で、自宅にKaaS(Kubernetes as a Service)を構築する方法を解説するシリーズの2つめです。
 
-- [Cluster APIインストール編](https://zenn.dev/articles/kaas-kubeadm-proxmox-part1)
+- [Cluster APIインストール編](https://zenn.dev/makidev/articles/kaas-kubeadm-proxmox-part1)
 - **ClusterClass設定編** ←ココ
-- [ストレージ設定編](https://zenn.dev/articles/kaas-kubeadm-proxmox-part3)
+- [ストレージ設定編](https://zenn.dev/makidev/articles/kaas-kubeadm-proxmox-part3)
 
 目指すべき全体像はこんな感じ。Management ClusterにCluster APIからKubernetesのクラスタが自動でデプロイされていきます。
 
@@ -381,7 +381,7 @@ ProxmoxMachineTemplate, KubeadmControlPlaneTemplate, KubeadmConfigTemplate, Prox
 
 ## ClusterTopology機能を有効にする
 
-ClusterClassを使うためにClusterTopologyを有効にします。[Cluster APIインストール編](https://zenn.dev/articles/kaas-kubeadm-proxmox-part1#management-clusterの構築)に書かれた手順通りCluster APIをインストールした場合、既に設定されています。
+ClusterClassを使うためにClusterTopologyを有効にします。[Cluster APIインストール編](https://zenn.dev/makidev/articles/kaas-kubeadm-proxmox-part1#management-clusterの構築)に書かれた手順通りCluster APIをインストールした場合、既に設定されています。
 
 Cluster APIのDeploymentの`args`に指定してある`--feature-gates`という名前の引数の設定項目を修正することで、ClusterTopology機能を有効にします。
 
@@ -929,4 +929,4 @@ No resources found
 
 次回はProxmoxのストレージからボリュームを作成するための設定をClusterResourceSetというリソースを使って設定していきます。
 
-https://zenn.dev/articles/kaas-kubeadm-proxmox-part3
+https://zenn.dev/makidev/articles/kaas-kubeadm-proxmox-part3

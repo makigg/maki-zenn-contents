@@ -10,8 +10,8 @@ published: false
 
 この記事は全3回で、自宅にKaaS(Kubernetes as a Service)を構築する方法を解説するシリーズの3つめです。
 
-- [Cluster APIインストール編](https://zenn.dev/articles/kaas-kubeadm-proxmox-part1)
-- [ClusterClass設定編](https://zenn.dev/articles/kaas-kubeadm-proxmox-part2)
+- [Cluster APIインストール編](https://zenn.dev/makidev/articles/kaas-kubeadm-proxmox-part1)
+- [ClusterClass設定編](https://zenn.dev/makidev/articles/kaas-kubeadm-proxmox-part2)
 - **ストレージ設定編** ←ココ
 
 目指すべき全体像はこんな感じ。Management ClusterにCluster APIからKubernetesのクラスタが自動でデプロイされていきます。
@@ -85,7 +85,7 @@ https://cluster-api.sigs.k8s.io/tasks/experimental-features/cluster-resource-set
 
 
 
-ゴールデンイメージのSCSI ControllerがVirtIO SCSI single、もしくはVirtIO SCSIに設定されているか確認します。[Cluster APIインストール編の手順](https://zenn.dev/articles/kaas-kubeadm-proxmox-part1#packerでゴールデンイメージを作る)通りにゴールデンイメージを作った方は既に設定されているはずです。
+ゴールデンイメージのSCSI ControllerがVirtIO SCSI single、もしくはVirtIO SCSIに設定されているか確認します。[Cluster APIインストール編の手順](https://zenn.dev/makidev/articles/kaas-kubeadm-proxmox-part1#packerでゴールデンイメージを作る)通りにゴールデンイメージを作った方は既に設定されているはずです。
 
 ![](/images/kaas-kubeadm-proxmox/proxmox-scsi-controller.drawio.png)
 
@@ -139,7 +139,7 @@ make build-proxmox-ubuntu-2404
 
 ### ClusterResourceSetを有効化する
 
-ClusterResourceSetを有効にします。[Cluster APIインストール編](https://zenn.dev/articles/kaas-kubeadm-proxmox-part1#management-clusterの構築)に書かれた手順通りCluster APIをインストールした場合、既に設定されています。
+ClusterResourceSetを有効にします。[Cluster APIインストール編](https://zenn.dev/makidev/articles/kaas-kubeadm-proxmox-part1#management-clusterの構築)に書かれた手順通りCluster APIをインストールした場合、既に設定されています。
 
 Namespace capi-systemのDeployment capi-controller-managerの`args`に指定してある`--feature-gates`という名前の引数の設定項目を修正することで、ClusterResourceSet機能を有効にします。
 

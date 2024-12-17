@@ -12,8 +12,8 @@ Kubernetesはどこのご家庭にも1クラスタはあると思いますが、
 そんな声にお応えして、全3回のシリーズで、自宅にKaaS(Kubernetes as a Service)を構築する方法を解説します。
 
 - **Cluster APIインストール編** ←ココ
-- [ClusterClass設定編](https://zenn.dev/articles/kaas-kubeadm-proxmox-part2)
-- [ストレージ設定編](https://zenn.dev/articles/kaas-kubeadm-proxmox-part3)
+- [ClusterClass設定編](https://zenn.dev/makidev/articles/kaas-kubeadm-proxmox-part2)
+- [ストレージ設定編](https://zenn.dev/makidev/articles/kaas-kubeadm-proxmox-part3)
 
 目指すべき全体像はこんな感じ。Management ClusterにCluster APIからKubernetesのクラスタが自動で払いだされていきます。
 
@@ -975,4 +975,4 @@ kubectl delete cluster cluster01
 
 ということで、次回はClusterClassを使って、インフラ構成を意識しない短いマニフェストだけでKubernetesクラスタをデプロイできるようにする仕組みを紹介します。
 
-https://zenn.dev/articles/kaas-kubeadm-proxmox-part2
+https://zenn.dev/makidev/articles/kaas-kubeadm-proxmox-part2
