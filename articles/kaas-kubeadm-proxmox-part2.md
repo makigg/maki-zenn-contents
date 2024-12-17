@@ -289,7 +289,7 @@ spec:
 ```
 :::
 
-今回はClusterClassという仕組みを使って、24行のマニフェストでクラスタをデプロイできるようにします。
+今回はClusterClassという仕組みを使って、たった24行のマニフェストでクラスタをデプロイできるようにします。
 
 ```yaml:cluster01.yaml
 apiVersion: cluster.x-k8s.io/v1beta1
