@@ -3,7 +3,7 @@ title: "誤自宅KaaSその1 Cluster APIインストール編"
 emoji: "📘"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["kubernetes", "おうちkubernetes", "clusterapi", "proxmox", "kubeadm"]
-published: false
+published: true
 ---
 
 ## はじめに
